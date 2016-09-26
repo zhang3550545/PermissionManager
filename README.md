@@ -47,10 +47,10 @@ public void onRequestPermissionsResult(int requestCode, @NonNull String[] permis
 
 ```
 if (PermissionManager.getInstance(getApplicationContext()).getGrantedInfo(Manifest.permission.RECORD_AUDIO) ) {
-                    Toast.makeText(FirstActivity.this, "录音权限已经获取", Toast.LENGTH_SHORT).show();
-                } else {
-                    Toast.makeText(FirstActivity.this, "你还没有获取录音权限", Toast.LENGTH_SHORT).show();
-                }
+    Toast.makeText(FirstActivity.this, "录音权限已经获取", Toast.LENGTH_SHORT).show();
+} else {
+    Toast.makeText(FirstActivity.this, "你还没有获取录音权限", Toast.LENGTH_SHORT).show();
+}
 ```
 
-*注意：在enecute()和getGrantedInfo()方法使用的时候时机需要把握对，在enecute()执行后申请权限，在onRequestPermissionsResult()方法中才获取最新的权限信息，再做处理。如果在此之前调用getGrantedInfo()可能拿不到正确的结果*
+*注意：在execute()和getGrantedInfo()方法使用的时候时机需要把握对，在execute()执行后申请权限，在onRequestPermissionsResult()方法中才获取最新的权限信息，再做处理。如果在此之前调用getGrantedInfo()可能拿不到正确的结果*
